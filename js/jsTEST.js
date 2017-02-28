@@ -32,22 +32,16 @@ function turnCards() {
 	var i = 0
 	for (i = 0; i < indices.length; i++) {
 		this.setAttribute('src' , pics[indices[i]]);
+		images[i].removeEventListener('click' , turnCards);
 	}
 	indices.pop(i);
-}
-
-function addToScore() {
-	if (indices[0] === 0) {
-		count = count + 1;
-	} else {
-		count = count - 1;
-	}
-	return count;
+	
 }
 
 function tryAgain() {
 	for (var i = 0; i < images.length; i++) {
 		images[i].setAttribute('src' , pics[3]);
+		images[i].addEventListener('click' , turnCards);
 	}
 	indices = [0, 1, 2];
 }
@@ -62,10 +56,14 @@ btn.addEventListener('click' , tryAgain);
 
 console.log(count);
 
-//to turn cards function
-//  show all cards
-//  if ace, add 1 to count
-//  call tryagain function
+//NEXT STEPS:  
+//   pop makes it so that I can click the same card multiple times.  I need it to freeze
+// figure out how to make a score.  
+//  set this behaviour: 
+//    1.  click a card
+//    2.  add to score if ace
+//    3.  reveal all cards
+//    4.  refresh (can probably take out try again button)
 
 
 

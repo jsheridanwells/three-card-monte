@@ -32,13 +32,16 @@ function turnCards() {
 	var i = 0
 	for (i = 0; i < indices.length; i++) {
 		this.setAttribute('src' , pics[indices[i]]);
+		images[i].removeEventListener('click' , turnCards);
 	}
 	indices.pop(i);
+	
 }
 
 function tryAgain() {
 	for (var i = 0; i < images.length; i++) {
 		images[i].setAttribute('src' , pics[3]);
+		images[i].addEventListener('click' , turnCards);
 	}
 	indices = [0, 1, 2];
 }
