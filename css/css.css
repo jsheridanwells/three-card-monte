@@ -1,15 +1,19 @@
+
+
 body {
 	background-color: black;
 }
 h1.title {
 	font-size: 80px;
+	font-family: 'Diplomata SC', cursive;
 	color: burlywood;
 	text-align: center;
 	margin: 30px;
+	text-shadow: 2px 2px #999;
 }
-
 h2.score {
 	font-size: 50px;
+	font-family: 'Amatic SC', cursive;
 	color: burlywood;
 	text-align: center;
 	margin: 30px;
@@ -29,4 +33,6 @@ h2.score {
 	border-color: black;
 	color: black;
 	font-size: 30px;
+	font-family: 'Amatic SC', cursive;
+	float: left;
 }

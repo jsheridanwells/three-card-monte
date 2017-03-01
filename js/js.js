@@ -16,7 +16,7 @@ var count = 0;
 
 var btn = document.querySelector('.btn');
 
-//shuffle the array numbers randomly (do not delete)
+//shuffle the array numbers randomly
 function shuffleIds(arr) {
     for (var i = arr.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
@@ -27,6 +27,7 @@ function shuffleIds(arr) {
     return arr;
 }
 
+//user clicks on a card to turn it over.  
 function turnCards() {
 	shuffleIds(indices);
 	var i = 0
@@ -38,6 +39,7 @@ function turnCards() {
 	
 }
 
+//user clicks "Try Again" button to reset the card images and unshuffle the indices array.  
 function tryAgain() {
 	for (var i = 0; i < images.length; i++) {
 		images[i].setAttribute('src' , pics[3]);
@@ -46,18 +48,15 @@ function tryAgain() {
 	indices = [0, 1, 2];
 }
 
+//bind functions to cards and Try Again button
 for (var i = 0; i < images.length; i++) {
 	images[i].addEventListener('click' , turnCards);
 }
 
-counter.innerHTML = count;
-
 btn.addEventListener('click' , tryAgain);
 
-console.log(count);
-
 //NEXT STEPS:  
-//   pop makes it so that I can click the same card multiple times.  I need it to freeze
+//   
 // figure out how to make a score.  
 //  set this behaviour: 
 //    1.  click a card
