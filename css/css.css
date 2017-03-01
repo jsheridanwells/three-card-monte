@@ -11,12 +11,19 @@ h1.title {
 	margin: 30px;
 	text-shadow: 2px 2px #999;
 }
+h1.text-reveal{
+	font-size: 80px;
+	font-family: 'Amatic SC', cursive;
+	color: white;
+	margin: 50vh;
+}
 h2.score {
 	font-size: 50px;
 	font-family: 'Amatic SC', cursive;
 	color: burlywood;
 	text-align: center;
 	margin: 30px;
+	
 }
 
 .cards {
@@ -36,3 +43,16 @@ h2.score {
 	font-family: 'Amatic SC', cursive;
 	float: left;
 }
+#hidden {
+  content: " ";
+  z-index: 10;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+

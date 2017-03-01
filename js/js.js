@@ -16,6 +16,8 @@ var count = 0;
 
 var btn = document.querySelector('.btn');
 
+var overlay = document.querySelector('.reveal')
+
 //shuffle the array numbers randomly
 function shuffleIds(arr) {
     for (var i = arr.length - 1; i > 0; i--) {
@@ -31,11 +33,35 @@ function shuffleIds(arr) {
 function turnCards() {
 	shuffleIds(indices);
 	var i = 0
+	var src = '';
 	for (i = 0; i < indices.length; i++) {
 		this.setAttribute('src' , pics[indices[i]]);
 		images[i].removeEventListener('click' , turnCards);
+		
 	}
+	src = this.getAttribute('src');
+	if (src === '../img/ace-hearts.png') {
+		count ++
+		showCards();
+	} 
 	indices.pop(i);
+	updateCounter();
+	
+}
+
+function updateCounter() {
+	    if (count === 1) {
+			counter.innerHTML = count + ' time';
+		} else {
+			counter.innerHTML = count + ' times';
+		}
+}
+
+function showCards() {
+	overlay.style = "display: block";
+	timeShow = window.setTimeout(function() {
+		overlay.style = "display: none";
+	}, 1000);
 	
 }
 
@@ -53,17 +79,5 @@ for (var i = 0; i < images.length; i++) {
 	images[i].addEventListener('click' , turnCards);
 }
 
+//bind function to "Try Again" button
 btn.addEventListener('click' , tryAgain);
-
-//NEXT STEPS:  
-//   
-// figure out how to make a score.  
-//  set this behaviour: 
-//    1.  click a card
-//    2.  add to score if ace
-//    3.  reveal all cards
-//    4.  refresh (can probably take out try again button)
-
-
-
-
