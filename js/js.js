@@ -1,9 +1,9 @@
 //images to hide under cards
 var pics = [
-	'../img/ace-hearts.png' , 
-	'../img/king-clubs.png' , 
-	'../img/king-spades.png' , 
-	'../img/back.jpg'
+	'img/ace-hearts.png' , 
+	'img/king-clubs.png' , 
+	'img/king-spades.png' , 
+	'img/back.jpg'
 ]
 
 var indices = [0, 1, 2];
@@ -40,7 +40,7 @@ function turnCards() {
 		
 	}
 	src = this.getAttribute('src');
-	if (src === '../img/ace-hearts.png') {
+	if (src === 'img/ace-hearts.png') {
 		count ++
 		showCards();
 	} 
@@ -60,8 +60,8 @@ function updateCounter() {
 function showCards() {
 	overlay.style = "display: block";
 	timeShow = window.setTimeout(function() {
-		overlay.style = "display: none";
-	}, 1000);
+	 overlay.style = "display: none";
+	 }, 1000);
 	
 }
 
